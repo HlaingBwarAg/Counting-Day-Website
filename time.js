@@ -1,46 +1,55 @@
-// let days = document.getElementById("days")
 
-// let year = document.getElementById("year")
-// let month = document.getElementById("month")
-// let day = document.getElementById("day")
-// let hour = document.getElementById("hour")
-// let minute = document.getElementById("minute")
-// let second = document.getElementById("second")
+function calcTime(){
+    const eventDate = new Date("2021-02-21 00:00:00")
+    const now = new Date()
 
-// const eventDate = new Date("2021-02-21").getTime()
-// const now = new Date().getTime()
-// console.log( eventDate )
-// console.log( now )
+    const eventYear = eventDate.getFullYear();
+    const february = (eventYear % 4 === 0 && eventYear % 100 !==0) || eventYear % 400 === 0 ? 29 : 28 ;
+    const daysInMonth = [31,february,31,30,31,30,31,31,30,31,30,31]
 
-// const gap = now - eventDate
-// console.log(gap)
+    // year
+    var year = now.getFullYear() - eventDate.getFullYear() 
 
-// const second = 1000;
-// const minute = second * 60;
-// const hour = minute * 60;
-// const day = hour * 24;
- 
+    // month
+    var month = now.getMonth() - eventDate.getMonth()
+        if(month < 0){
+            year --;
+            month +=12;
+        }
 
-// const textDays = Math.floor(gap / day)
-// const textYear = Math.floor((gap / day) % 365)
+        // day
+    var day = now.getDate() - eventDate.getDate()
+        if(day < 0){
+            month --;
+            day += daysInMonth[eventDate.getMonth()];
+        }
 
-// const  = Math.floor(gap / day)
-// const  = Math.floor(gap / day)
-// const  = Math.floor(gap / day)
-// const  = Math.floor(gap / day)
-// const  = Math.floor(gap / day)
+        // for time
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const days = hour * 24;
 
-const eventDate = new Date("2020-02-21")
-const now = new Date()
+    const gap = now.getTime() - eventDate.getTime()
 
-// year
-year = now.getFullYear() - eventDate.getFullYear() 
-console.log(year)
+    var textDays = Math.floor( gap / days ) + 1
+    var textHour = Math.floor(( gap % days) / hour )
+        if ( textHour > 12){
+                textHour -= 12 
+        }
+    var textMinute = Math.floor((gap % hour) / minute )
+    var textSecond = Math.floor((gap % minute) / second )
+        
+    console.log(day)
 
-// month
-month = now.getMonth() - eventDate.getMonth()
-console.log(month)
+    document.getElementById("year").innerText = year ;
+    document.getElementById("month").innerText = month ;
+    document.getElementById("day").innerText = day ;
+    document.getElementById("hour").innerText = textHour ;
+    document.getElementById("minute").innerText = textMinute ;
+    document.getElementById("second").innerText = textSecond ;
+    document.getElementById("days").innerText = textDays ;
+}
 
-// day
-day = now.getDate() - eventDate.getDate()
-console.log(day)
+setInterval(calcTime,1000)
+
