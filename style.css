@@ -1,13 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    color:#e6e6e6;
+    font-family: 'Dosis', sans-serif;
+}
 .container{
     height: 100vh;
     display: flex;
-    align-items: center;
-
+    background-color: #2676f9;
 }
 section{
     margin:auto;
@@ -16,10 +22,16 @@ section{
     display: flex;
     justify-content: space-between;
     position: relative;
+    background-image: url(assets/heartMinion.svg);
+    background-repeat: no-repeat;
+    background-position-x: 130%;
+    background-position-y: 95%;
+    background-size: 70%;
+    
 }
 h4{
     font-size: 0.5em;
-    text-align: center;
+    /* text-align: center; */
 }
 h3{
     font-size: 3em;
@@ -29,13 +41,14 @@ h3{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
+    
 }
 .details div{
     
 }
 .time-container{
-    margin-right: 40px;
+    width: 76px;
+    text-align: center;
 }
 .year{
     display: flex;
@@ -47,11 +60,49 @@ h3{
 }
 .time{
     display: flex;
-    margin :0px 20px 20px 0px;
+
 }
 .logo{
     position: absolute;
+    font-size: 1.5em;
+    text-align: center;
+    color: #f9a826;
+    width: 40px;
+    padding: 5px;
+    margin: 0 18px;
+    border-bottom: 3px solid #e6e6e6;
 }
 .days{
 
+}
+@media screen and ( max-width: 1025px) {
+    section{
+    background-position-y: 97% ;
+    background-size: 75%;
+    }
+}
+@media screen and ( max-width: 780px) {
+    section{
+    background-position-x: 170%;
+    background-position-y: 81%;
+    background-size: 84%;
+    }
+}
+@media screen and ( max-width: 560px) {
+    section{
+    background-position-y:50% ;
+    }
+}
+@media screen and ( max-width: 370px) {
+    section{
+    background-position-y: 50%;
+    display: flex;
+    flex-direction: column-reverse;
+    }
+    .days{
+        text-align: end;
+    }
+    .logo{
+        top: 0;
+    }
 }
