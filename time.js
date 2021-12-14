@@ -42,7 +42,7 @@ function calcTime(){
         
     console.log(day)
 
-    document.getElementById("year").innerText = year ;
+    document.getElementById("year").innerText = parse(year) ;
     document.getElementById("month").innerText = month ;
     document.getElementById("day").innerText = day ;
     document.getElementById("hour").innerText = textHour ;
