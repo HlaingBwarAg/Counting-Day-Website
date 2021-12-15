@@ -1,6 +1,6 @@
 
 function calcTime(){
-    const eventDate = new Date("February 21, 2021 00:00:00")
+    const eventDate = new Date("Feb 21, 2021 00:00:00")
     const now = new Date()
 
     const eventYear = eventDate.getFullYear();
