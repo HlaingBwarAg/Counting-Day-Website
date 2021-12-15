@@ -39,8 +39,6 @@ function calcTime(){
         }
     var textMinute = Math.floor((gap % hour) / minute )
     var textSecond = Math.floor((gap % minute) / second )
-        
-    console.log(day)
 
     document.getElementById("year").innerText = year ;
     document.getElementById("month").innerText = month ;
