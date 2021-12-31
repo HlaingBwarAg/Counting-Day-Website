@@ -75,6 +75,28 @@ h3{
 .days{
 
 }
+.message{
+    border-left: 1px solid #e6e6e6;
+    width: ;
+    margin: 5px;
+    overflow-wrap: normal;
+    overflow-y: scroll;
+    height: 100px;
+    padding-left:10px ;
+    display: none;
+}
+.message::-webkit-scrollbar{
+    display: none;
+}
+.message-h3{
+    width: 80%;
+    font-size: 1.2em;
+    color: #f9a826;
+}
+.message-p{
+    width: 80%;
+    font-size: 0.3em;
+}
 @media screen and ( max-width: 1025px) {
     section{
     background-position-y: 97% ;
@@ -83,17 +105,26 @@ h3{
 }
 @media screen and ( max-width: 780px) {
     section{
-    background-position-x: 170%;
-    background-position-y: 81%;
-    background-size: 84%;
-    }
+        background-position-y: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+        }
+        .days{
+            text-align: end;
+        }
+        .logo{
+            top: 0;
+        }
+    .message{
+        height: 200PX;
+    } 
 }
 @media screen and ( max-width: 560px) {
     section{
     background-position-y:50% ;
     }
 }
-@media screen and ( max-width: 370px) {
+@media screen and ( max-width: 380px) {
     section{
     background-position-y: 50%;
     display: flex;

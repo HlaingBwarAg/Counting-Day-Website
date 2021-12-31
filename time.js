@@ -47,6 +47,12 @@ function calcTime(){
     document.getElementById("minute").innerText = textMinute ;
     document.getElementById("second").innerText = textSecond ;
     document.getElementById("days").innerText = textDays ;
+
+    
+    let message = document.querySelector(".message")
+    if( textDays == 315){
+        message.style.display = "block";
+    }
 }
 
 setInterval(calcTime,1000)
