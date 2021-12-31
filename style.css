@@ -124,7 +124,7 @@ h3{
     background-position-y:50% ;
     }
 }
-@media screen and ( max-width: 380px) {
+/* @media screen and ( max-width: 380px) {
     section{
     background-position-y: 50%;
     display: flex;
@@ -136,4 +136,4 @@ h3{
     .logo{
         top: 0;
     }
-}
+} */
