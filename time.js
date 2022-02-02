@@ -12,7 +12,7 @@ function calcTime(){
 
     // month
     var month = now.getMonth() - eventDate.getMonth()
-        if(month =< 0){
+        if(month <= 0){
             year --;
             month +=12;
         }
