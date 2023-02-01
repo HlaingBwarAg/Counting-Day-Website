@@ -21,6 +21,10 @@ function calcTime(){
     var day = now.getDate() - eventDate.getDate()
         if(day < 0){
             month --;
+            if(month < 0){
+                month += 1;
+                year --;
+            }
             day += daysInMonth[eventDate.getMonth()];
         }
 
